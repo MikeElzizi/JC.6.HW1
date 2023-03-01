@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
 class Main {
-        public static void main(String[] args) {
+
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int earnings = 0;
         int spendings = 0;
@@ -50,17 +51,18 @@ class Main {
         }
     }
     public static int taxEarnings(int earnings) {
+
         int tax1 = earnings * 6 / 100;
         if (tax1 >= 0) {
             return tax1;
         } else {
             return 0;
         }
+
     }
 
-
     public static int taxEarningsMinusSpendings(int earnings, int spendings) {
-        int tax = (earnings - spendings) * 15 / 100;
+        int tax = (earnings/spendings);
         if (tax >= 0) {
             return tax;
         } else {
@@ -69,8 +71,10 @@ class Main {
     }
 
     public boolean notEquals(int a, int b) {
-        if (taxEarnings(a) <= taxEarningsMinusSpendings(a, b)) {
+        if (taxEarnings(a) >= taxEarningsMinusSpendings(a, b)) {
             return true;
         } else return false;
     }
+
 }
+
